@@ -13,10 +13,10 @@
 require 'spec_helper'
 
 describe User do
-  before do
-    @user = User.new(name: "Example User", username: "user_name", 
+  before {
+    @user = User.new(name: "Example User", username: "user_name",
                      password: "foobar", password_confirmation: "foobar")
-  end
+  }
 
   subject { @user }
 
@@ -29,6 +29,7 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:articles) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -89,7 +90,7 @@ describe User do
   end
 
   context "when name contains sequential spaces" do
-    before { 
+    before {
       @user.name = "abc    deda  fsd"
       @user.save
     }
@@ -100,7 +101,7 @@ describe User do
   end
 
   context "when name is empty" do
-    before { 
+    before {
       @user.name = nil
       @user.save
     }
@@ -117,17 +118,17 @@ describe User do
     before { @user.password_confirmation = "mismatch" }
     it { should_not be_valid }
   end
-  
+
   context "when password confirmation is nil" do
     before { @user.password_confirmation = nil }
     it { should_not be_valid }
   end
-  
+
   context "with a password that's too short" do
     before { @user.password = @user.password_confirmation = "a" * 5 }
     it { should be_invalid }
   end
-  
+
   describe "return value of authenticate method" do
     before { @user.save }
     let(:found_user) { User.find_by_username(@user.username) }

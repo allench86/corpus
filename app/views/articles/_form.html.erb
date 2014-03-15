@@ -1,0 +1,29 @@
+<%= form_for(@article) do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+      <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <td>
+        <%= label_tag(:chinese, "中文:") %>
+        <%= text_area_tag(:chinese, @article.chinese_article ? @article.chinese_article : "") %>
+      </td>
+      <td>
+        <%= label_tag(:english, "English:") %>
+        <%= text_area_tag(:english, @article.english_article ? @article.english_article : "") %>
+      </td>
+    </tr>
+  </table>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

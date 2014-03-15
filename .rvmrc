@@ -1,2 +1,2 @@
-rvm --create use jruby-1.7.3@corpus --verify-downloads 1
-export JRUBY_OPTS="--1.9 -J-Xmx1g -J-XX:MaxPermSize=512m -J-Dfile.encoding=UTF-8 -Xcompile.invokedynamic=false"
+rvm --create use jruby-1.7.11@corpus --verify-downloads 1
+export JRUBY_OPTS="--2.0 -J-Xmx1g -J-XX:MaxPermSize=512m -J-Dfile.encoding=UTF-8 -Xcompile.invokedynamic=false -Xcext.enabled=true"

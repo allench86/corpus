@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "1.9.3", :engine => "jruby", :engine_version => "1.7.3"
+ruby "2.0.0", :engine => "jruby", :engine_version => "1.7.11"
 
 gem 'rails', '3.2.13'
 
@@ -20,17 +20,17 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 
+gem 'sunspot_rails'
+gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
+
 group :development, :test do
   gem 'jasmine'
   gem 'rspec-rails'
   gem 'capybara', "< 2.0.0"
-end
-
-group :development, :test do
   gem 'factory_girl_rails', '4.1.0'
 end
 
-group :development do
+group :test do
   gem 'annotate', '2.5.0'
 end
 

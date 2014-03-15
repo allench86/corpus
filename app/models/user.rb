@@ -13,6 +13,8 @@
 class User < ActiveRecord::Base
   attr_accessible :username, :name, :password, :password_confirmation
 
+  has_many :articles
+
   has_secure_password
 
   VALID_USERNAME_REGEX = /\A[a-zA-Z]+[a-zA-Z\d\-_]+\z/

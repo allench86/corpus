@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+    <td>
+      <b>中文:</b>
+    </td>
+    <td>
+      English:
+    </td>
+  </tr>
+  <% more_paragraphs = [@article.chinese_paragraphs.size, @article.english_paragraphs.size].max %>
+  <% for i in 0..more_paragraphs %>
+  <tr>
+    <td><%= @article.chinese_paragraphs[i] ? @article.chinese_paragraphs[i].content : "" %>
+    </td>
+    <td><%= @article.english_paragraphs[i] ? @article.english_paragraphs[i].content : "" %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

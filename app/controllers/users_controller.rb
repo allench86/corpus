@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-  
+
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User destroyed."
@@ -31,10 +31,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-  
+
   def edit
   end
-  
+
   def update
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated"
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-  
+
   private
     def signed_in_user
       store_location

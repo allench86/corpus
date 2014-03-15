@@ -1,0 +1,27 @@
+<h1>Listing articles</h1>
+
+<table>
+  <tr>
+    <th>Chinese Metadata</th>
+    <th>English Metadata</th>
+    <th>Last editor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= article.chinese_metadata %></td>
+    <td><%= article.english_metadata %></td>
+    <td><%= article.last_editor_id %></td>
+    <td><%= link_to 'Show', article %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Article', new_article_path %>

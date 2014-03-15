@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130801015347) do
+ActiveRecord::Schema.define(:version => 20140313044624) do
+
+  create_table "articles", :force => true do |t|
+    t.integer  "last_editor_id"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.integer  "user_id"
+    t.string   "chinese_metadata_string"
+    t.string   "english_metadata_string"
+  end
+
+  create_table "paragraphs", :force => true do |t|
+    t.integer  "language"
+    t.string   "content"
+    t.integer  "article_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
