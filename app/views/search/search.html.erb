@@ -20,11 +20,11 @@
 <% @results.result_set.each do |item| %>
   <tr class="<%= cycle("odd", "even") %>">
     <td>
-      <div><%= item[:chinese_paragraph].content %></div>
+      <div><%= highlight(item[:chinese_paragraph].content, params[:search]) %></div>
       <div><%= link_to 'Full Article', item[:article], :controller => 'articles' %></div>
     </td>
     <td>
-      <div><%= item[:english_paragraph].content %></div>
+      <div><%= highlight(item[:english_paragraph].content, params[:search]) %></div>
       <div><%= link_to 'Full Article', item[:article], :controller => 'articles' %></div>
     </td>
   </tr>
