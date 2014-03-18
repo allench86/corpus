@@ -9,8 +9,8 @@
       English:
     </td>
   </tr>
-  <% more_paragraphs = [@article.chinese_paragraphs.size, @article.english_paragraphs.size].max %>
-  <% for i in 0..more_paragraphs %>
+  <% max_paragraph_num = [@article.chinese_paragraphs.size, @article.english_paragraphs.size].max %>
+  <% for i in 0..max_paragraph_num %>
   <tr>
     <td><%= @article.chinese_paragraphs[i] ? @article.chinese_paragraphs[i].content : "" %>
     </td>
