@@ -1,26 +1,49 @@
 <h1>Listing articles</h1>
 
-<table>
+<%= will_paginate @articles %>
+
+<table class="articles list">
   <tr>
-    <th>Chinese Metadata</th>
-    <th>English Metadata</th>
-    <th>Last editor</th>
     <th></th>
-    <th></th>
+    <th>Doc ID</th>
+    <th>Speech ID</th>
+    <th>Event</th>
+    <th>Speech Title</th>
+    <th>Speaker</th>
+    <th>Topic</th>
+    <th>Last Edit</th>
+    <!-- <th></th> -->
     <th></th>
   </tr>
 
 <% @articles.each do |article| %>
-  <tr>
-    <td><%= article.chinese_metadata %></td>
-    <td><%= article.english_metadata %></td>
-    <td><%= article.last_editor_id %></td>
-    <td><%= link_to 'Show', article %></td>
+  <tr class="articles list chinese">
+    <td>中文</td>
+    <td><%= link_to article.chinese_metadata["Doc_ID"], article %></td>
+    <td><%= link_to article.chinese_metadata["Speech_ID"], article %></td>
+    <td><%= link_to article.chinese_metadata["Event"], article %></td>
+    <td><%= link_to article.chinese_metadata["Speech_Title"], article %></td>
+    <td><%= article.chinese_metadata["Speaker"] %></td>
+    <td><%= article.chinese_metadata["Topic"] %></td>
+    <td><%= article.last_editor.name %></td>
+    <!-- <td><%= link_to 'Show', article %></td> -->
     <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <tr class="articles list english">
+    <td>English</td>
+    <td><%= link_to article.english_metadata["Doc_ID"], article %></td>
+    <td><%= link_to article.english_metadata["Speech_ID"], article %></td>
+    <td><%= link_to article.english_metadata["Event"], article %></td>
+    <td><%= link_to article.english_metadata["Speech_Title"], article %></td>
+    <td><%= article.english_metadata["Speaker"] %></td>
+    <td><%= article.english_metadata["Topic"] %></td>
+    <td></td>
+    <td><%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
+
+<%= will_paginate @articles %>
 
 <br />
 

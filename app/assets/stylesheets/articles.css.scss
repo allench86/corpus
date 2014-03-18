@@ -1,3 +1,27 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.articles {
+  table-layout: fixed;
+  width: 100%;
+
+  .list {
+    vertical-align: top;
+
+    > th {
+      background-color:green;
+      word-break:break-all;
+    }
+  }
+}
+
+.articles .list .chinese {
+  border-top: 1px solid #B0B0B0;
+  border-bottom: 1px dotted #DBDBDB;
+}
+
+.articles .list .english {
+  border-bottom: 1px solid #B0B0B0;
+}

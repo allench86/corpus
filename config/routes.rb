@@ -1,11 +1,8 @@
 Corpus::Application.routes.draw do
   get "search/search"
 
-  resources :paragraphs
-
   resources :articles
 
-  # root to: "sessions#new"
   root to: "search#index"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

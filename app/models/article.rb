@@ -35,4 +35,8 @@ class Article < ActiveRecord::Base
   def english_paragraphs
   	paragraphs.find_all_by_language(2)
   end
+
+  def last_editor
+    User.find_by_id(last_editor_id)
+  end
 end

@@ -7,9 +7,9 @@
   </p>
 <% end %>
 
-<div><%= pluralize(@results.total, 'Result') %></div>
+<div><%= pluralize(@results.total, 'Result') %> for "<%= params[:search] %>"</div>
 
-<%= will_paginate @results.search.results %>
+<div><%= will_paginate @results.search.results %></div>
 
 <table>
   <tr>
@@ -18,10 +18,15 @@
   </tr>
 
 <% @results.result_set.each do |item| %>
-  <tr>
-    <td><%= item[:chinese_paragraph].content %></td>
-
-    <td><%= item[:english_paragraph].content %></td>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <div><%= item[:chinese_paragraph].content %></div>
+      <div><%= link_to 'Full Article', item[:article], :controller => 'articles' %></div>
+    </td>
+    <td>
+      <div><%= item[:english_paragraph].content %></div>
+      <div><%= link_to 'Full Article', item[:article], :controller => 'articles' %></div>
+    </td>
   </tr>
 <% end %>
 </table>

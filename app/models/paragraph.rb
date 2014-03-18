@@ -10,7 +10,7 @@ class Paragraph < ActiveRecord::Base
     if keyword.present?
       return search do
         fulltext keyword
-        paginate :page => page, :per_page => 1
+        paginate :page => page, :per_page => 10
       end
     end
     nil
