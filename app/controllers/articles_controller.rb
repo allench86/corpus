@@ -1,6 +1,11 @@
 class ArticlesController < ApplicationController
   include ArticlesHelper
   include SessionsHelper
+  include UsersHelper
+
+  before_filter :signed_in_user, only: [:index, :new, :create,
+   :edit, :update, :destroy]
+
   # GET /articles
   # GET /articles.json
   def index
