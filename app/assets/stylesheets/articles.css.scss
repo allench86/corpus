@@ -1,27 +1,114 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+$blueLight: #D1FAFF;
+$pinkLight: #FFD6D1;
 
 .articles {
   table-layout: fixed;
   width: 100%;
+}
 
-  .list {
-    vertical-align: top;
-
-    > th {
-      background-color:green;
-      word-break:break-all;
-    }
+.articles.list {
+  th {
+    word-break:break-all;
   }
 }
 
-.articles .list .chinese {
+.articles.list.chinese {
   border-top: 1px solid #B0B0B0;
   border-bottom: 1px dotted #DBDBDB;
 }
 
-.articles .list .english {
+.articles.list.english {
   border-bottom: 1px solid #B0B0B0;
+}
+
+.articles.list.language_col {
+  width: 50px;
+}
+
+.articles.list.doc_id_col {
+  width: 50px;
+  text-align: center;
+}
+
+.articles.list.speech_id_col {
+  width: 80px;
+  text-align: center;
+}
+
+.articles.list.event_col {
+  width: 200px;
+  text-align: center;
+}
+
+.articles.list.speech_title_col {
+  width: 220px;
+  text-align: center;
+}
+
+.articles.list.speaker_col {
+  width: 80px;
+  text-align: center;
+}
+
+.articles.list.topic_col {
+  width: 120px;
+  text-align: center;
+}
+
+.articles.list.last_edit_col {
+  /*width: 200px;*/
+  text-align: center;
+  border-bottom: 1px solid #B0B0B0;
+}
+
+.articles.list.actions_col {
+  width: 70px;
+  text-align: center;
+  border-bottom: 1px solid #B0B0B0;
+}
+
+.articles.pagination_wrapper {
+  width: 100%;
+  text-align: right;
+}
+
+.articles.article.first_column {
+  width: 50%;
+}
+
+.articles.article.second_column {
+  width: 50%;
+}
+
+.articles.article.odd_tr {
+  background-color: $blueLight;
+  vertical-align: top;
+}
+
+.articles.article.even_tr {
+  background-color: $pinkLight;
+  vertical-align: top;
+}
+
+.articles.article.content_wrapper {
+  text-align: left;
+  width: auto;
+  padding: 7px 5px 5px 5px;
+}
+
+.articles.edit_table.first_column {
+  width: 50%;
+}
+
+.articles.edit_table.second_column {
+  width: 50%;
+}
+
+.articles.edit_table {
+  textarea {
+    min-height: 800px;
+  }
 }

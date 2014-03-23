@@ -15,8 +15,8 @@ module SearchHelper
       self.keyword = keyword
       self.current_page = current_page
       self.result_set = []
-      result = {}
       search.results.each do |paragraph|
+        result = {}
         result[:article] = paragraph.article
         result[:chinese_paragraph] = get_chinese_paragraph(paragraph)
         result[:english_paragraph] = get_english_paragraph(paragraph)

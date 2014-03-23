@@ -3,6 +3,9 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+$grayMaxLight: #E9E7E7;
+$darkNavy: #19009C;
+$lightNavy: #2E1BFF;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -18,6 +21,10 @@ html {
 
 body {
   padding-top: 60px;
+}
+
+#main_body {
+  min-height: 500px;
 }
 
 section {
@@ -62,8 +69,58 @@ p {
   line-height: 1.7em;
 }
 
+.highlight {
+  font-size: 1.2em;
+}
 
 /* header */
+.navbar-inverse .navbar-inner {
+  background-color: $darkNavy;
+  background-image: -moz-linear-gradient(top, $darkNavy, $lightNavy);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($darkNavy), to($lightNavy));
+  background-image: -webkit-linear-gradient(top, $darkNavy, $lightNavy);
+  background-image: -o-linear-gradient(top, $darkNavy, $lightNavy);
+  background-image: linear-gradient(to bottom, $darkNavy, $lightNavy);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$lightNavy', endColorstr='$darkNavy', GradientType=0);
+  border-color: #252525;
+}
+
+.navbar-inverse .brand,
+.navbar-inverse .nav > li > a {
+  color: $grayMaxLight;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+  background-color: $darkNavy;
+  background-image: -moz-linear-gradient(top, $darkNavy, $lightNavy);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($darkNavy), to($lightNavy));
+  background-image: -webkit-linear-gradient(top, $darkNavy, $lightNavy);
+  background-image: -o-linear-gradient(top, $darkNavy, $lightNavy);
+  background-image: linear-gradient(to bottom, $darkNavy, $lightNavy);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$lightNavy', endColorstr='$darkNavy', GradientType=0);
+  color: white;
+}
+
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a {
+  text-decoration: none;
+  color: white;
+  background-color: $lightNavy;
+  background-color: $lightNavy;
+  background-image: -moz-linear-gradient(top, $lightNavy, $lightNavy);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($lightNavy), to($lightNavy));
+  background-image: -webkit-linear-gradient(top, $lightNavy, $lightNavy);
+  background-image: -o-linear-gradient(top, $lightNavy, $lightNavy);
+  background-image: linear-gradient(to bottom, $lightNavy, $lightNavy);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$lightNavy', endColorstr='$darkNavy', GradientType=0);
+}
 
 #logo {
   float: left;
@@ -78,7 +135,16 @@ p {
   &:hover {
     color: white;
     text-decoration: none;
+    background-color: $darkNavy;
+    background-image: -moz-linear-gradient(top, $darkNavy, $lightNavy);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($darkNavy), to($lightNavy));
+    background-image: -webkit-linear-gradient(top, $darkNavy, $lightNavy);
+    background-image: -o-linear-gradient(top, $darkNavy, $lightNavy);
+    background-image: linear-gradient(to bottom, $darkNavy, $lightNavy);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$lightNavy', endColorstr='$darkNavy', GradientType=0);
   }
+  max-width: 140px;
 }
 
 /* footer */
@@ -90,12 +156,12 @@ footer {
   color: $grayLight;
   a {
     color: $gray;
-    &:hover { 
+    &:hover {
       color: $grayDarker;
     }
-  }  
-  small { 
-    float: left; 
+  }
+  small {
+    float: left;
   }
   ul {
     float: right;

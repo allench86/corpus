@@ -10,20 +10,22 @@
     </div>
   <% end %>
 
-  <table>
+  <table class="articles edit_table">
+    <tr>
+      <th class="articles edit_table first_column">中文</th>
+      <th class="articles edit_table second_column">English</th>
+    </tr>
     <tr>
       <td>
-        <%= label_tag(:chinese, "中文:") %>
         <%= text_area_tag(:chinese, @article.chinese_article ? @article.chinese_article : "") %>
       </td>
       <td>
-        <%= label_tag(:english, "English:") %>
         <%= text_area_tag(:english, @article.english_article ? @article.english_article : "") %>
       </td>
     </tr>
   </table>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-large btn-primary"%>
   </div>
 <% end %>

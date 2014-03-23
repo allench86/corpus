@@ -1,11 +1,68 @@
 // Place all the styles related to the Search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$blueLight: #D1FAFF;
+$pinkLight: #FFD6D1;
 
-.odd {
-  background-color: #D1FAFF;
+.search.search_form {
+  label {
+    display: inline;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+  input.keyword {
+    display: inline;
+    width: 80%;
+  }
 }
 
-.even {
-  background-color: #FFD6D1;
+.search.pagination_wrapper {
+  width: 100%;
+  text-align: right;
+
+  div {
+    display: inline;
+  }
+
+  h2 {
+    display: inline;
+    padding-right: 10px;
+  }
 }
+
+.search.results {
+  width: 100%;
+  th {
+    font-size: 1.2em;
+  }
+}
+
+.search.results.first_column {
+  width: 50%;
+}
+
+.search.results.second_column {
+  width: 50%;
+}
+
+.search.results.odd_tr {
+  background-color: $blueLight;
+  vertical-align: top;
+}
+
+.search.results.even_tr {
+  background-color: $pinkLight;
+  vertical-align: top;
+}
+
+.search.results.result_wrapper {
+  text-align: left;
+  width: auto;
+  padding: 7px 5px 5px 5px;
+}
+
+.search.results.full_article_div {
+  width: auto;
+  float:right;
+}
+
