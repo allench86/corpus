@@ -3,5 +3,3 @@ require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
 Corpus::Application.initialize!
-
-config.time_zone = "Pacific Time (US & Canada)"

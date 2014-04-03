@@ -49,7 +49,7 @@ Warbler::Config.new do |config|
   # so that they can be packaged in the archive.
   # For Rails applications, the Rails gems are included by default
   # unless the vendor/rails directory is present.
-  config.gems += ["activerecord-jdbcmysql-adapter", "jruby-openssl"]
+  # config.gems += ["activerecord-jdbcmysql-adapter", "jruby-openssl"]
   # config.gems << "tzinfo"
 
   # Uncomment this if you don't want to package rails gem.
@@ -139,7 +139,7 @@ Warbler::Config.new do |config|
   # config.webxml.booter = :rails
 
   # Set JRuby to run in 1.9 mode.
-  # config.webxml.jruby.compat.version = "1.9"
+  config.webxml.jruby.compat.version = "1.9"
 
   # When using the :rack booter, "Rackup" script to use.
   # - For 'rackup.path', the value points to the location of the rackup
